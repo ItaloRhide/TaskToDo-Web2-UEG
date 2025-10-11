@@ -176,6 +176,5 @@ DELETE /api/tasks/1
 ---
 
 ## 👨‍💻 Autor
-**Desenvolvido por:** [Seu Nome Aqui]  
-📧 *seu.email@exemplo.com*  
+  **Desenvolvido por:** Ítalo Rhide  
 💼 *Projeto acadêmico / pessoal com fins educativos*
