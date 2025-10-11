@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light bg-white shadow-sm px-3">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center">
+      <img src="assets\midia\LOGO LEVGNUS.png" alt="Logo" class="navbar-logo me-2" />
+      <span class="navbar-brand mb-0 h1">Task To Do</span>
+    </div>
+
+    <!-- 🌙 Botão de Modo Escuro -->
+    <button class="btn btn-outline-secondary btn-sm" (click)="toggleDarkMode()">
+      {{ isDarkMode ? '☀️ Claro' : '🌙 Escuro' }}
+    </button>
+  </div>
+</nav>
+
+<main class="container mt-4">
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <p>&copy; 2025 Task To Do. Todos os direitos reservados.</p>
+</footer>
