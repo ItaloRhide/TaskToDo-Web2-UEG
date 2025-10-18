@@ -1,0 +1,86 @@
+<div class="mb-3 d-flex gap-2 align-items-start">
+  <input
+    [(ngModel)]="searchTitle"
+    (input)="searchByTitle()"
+    placeholder="Buscar por título..."
+    class="form-control"
+  />
+  <select
+    [(ngModel)]="filterType"
+    (change)="applyFilter()"
+    class="form-select"
+    style="width: 200px"
+  >
+    <option value="all">Todas</option>
+    <option value="pending">Pendentes</option>
+    <option value="completed">Concluídas</option>
+    <option value="today">Vencimento hoje</option>
+    <option value="overdue">Vencidas</option>
+  </select>
+
+  <!-- Redireciona para a página de criação -->
+  <button class="btn btn-primary" [routerLink]="['/nova-tarefa']">
+    Nova Tarefa
+  </button>
+</div>
+
+<div *ngIf="loading">Carregando...</div>
+
+<!-- Alerta de erro dismissible e auto-hide -->
+<div
+  *ngIf="error"
+  class="alert alert-danger alert-dismissible fade show"
+  role="alert"
+  style="position: relative"
+>
+  <div class="d-flex justify-content-between align-items-start">
+    <div>{{ error }}</div>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="closeError()"
+      title="Fechar"
+    ></button>
+  </div>
+</div>
+
+<ul class="list-group">
+  <li
+    *ngFor="let task of filteredTasks"
+    class="list-group-item d-flex justify-content-between align-items-start"
+  >
+    <div>
+      <input
+        type="checkbox"
+        [checked]="task.concluida"
+        (change)="toggleComplete(task)"
+      />
+      <strong [class.text-decoration-line-through]="task.concluida">
+        {{ task.titulo }}
+      </strong>
+      <div>
+        <small>
+          Vence: {{ task.dataVencimento }} · Prioridade:
+          {{ getPrioridadeLabel(task.prioridade) }}
+        </small>
+      </div>
+    </div>
+
+    <div>
+      <!-- Agora leva para a página de edição -->
+      <button
+        class="btn btn-sm btn-outline-primary me-1"
+        [routerLink]="['/editar-tarefa', task.id]"
+      >
+        Editar
+      </button>
+      <button
+        class="btn btn-sm btn-outline-danger"
+        (click)="deleteTask(task.id)"
+      >
+        Excluir
+      </button>
+    </div>
+  </li>
+</ul>

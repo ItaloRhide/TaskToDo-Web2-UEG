@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "types": [],
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "../task-to-do-app-backend",
+    "../node_modules",
+    "node_modules"
+  ]
+}

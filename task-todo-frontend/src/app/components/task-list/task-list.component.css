@@ -1,0 +1,10 @@
+/* Estilos mínimos para lista de tarefas */
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through;
+}
