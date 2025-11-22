@@ -94,46 +94,6 @@ task-todo-app/
 
 ---
 
-## ▶️ Como Executar o Projeto
-
-### 🐳 Passo 1 – Subir o Banco de Dados
-
-```bash
-docker-compose up -d
-```
-
-Acesse:
-- **PgAdmin:** http://localhost:8081  
-  - Usuário: `admin@taskdodb.com`  
-  - Senha: `admin123`
-
----
-
-### ☕ Passo 2 – Rodar o Backend
-
-```bash
-cd backend
-mvn clean install
-mvn spring-boot:run
-```
-
-API disponível em:  
-👉 **http://localhost:8080/api/tasks**
-
----
-
-### 🌐 Passo 3 – Rodar o Frontend
-
-```bash
-cd frontend
-npm install
-ng serve
-```
-
-Aplicação Angular acessível em:  
-👉 **http://localhost:4200**
-
----
 
 ## 🧠 Exemplos de Requisições (API REST)
 
