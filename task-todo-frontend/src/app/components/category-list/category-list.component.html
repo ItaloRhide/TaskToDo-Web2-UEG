@@ -1,0 +1,63 @@
+<div class="container mt-4">
+  <h2>Categorias</h2>
+
+  <button class="btn btn-primary mb-3" (click)="create()">
+    Nova Categoria
+  </button>
+
+  <div *ngIf="loading">Carregando categorias...</div>
+
+  <div
+    *ngIf="error"
+    class="alert alert-danger alert-dismissible fade show"
+    role="alert"
+    style="position: relative"
+  >
+    <div class="d-flex justify-content-between align-items-start">
+      <div>{{ error }}</div>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="closeError()"
+        title="Fechar"
+      ></button>
+    </div>
+  </div>
+
+  <!-- Cabeçalho da Lista -->
+  <div class="list-group">
+    <div
+      class="list-group-item list-group-item-action active"
+      style="
+        background-color: var(--primary-color);
+        border-color: var(--primary-dark);
+      "
+    >
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Nome da Categoria</h5>
+        <small>Ações</small>
+      </div>
+      <p class="mb-1">Descrição</p>
+    </div>
+
+    <!-- Itens da Lista -->
+    <div *ngFor="let c of categories" class="list-group-item">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ c.nome }}</h5>
+        <div>
+          <button class="btn btn-info btn-sm me-2" (click)="viewTasks(c.id!)">
+            Consultar Tasks
+          </button>
+          <button class="btn btn-outline-primary btn-sm me-2" (click)="edit(c.id!)">
+            Editar
+          </button>
+          <button class="btn btn-outline-danger btn-sm" (click)="delete(c.id!)">
+            Excluir
+          </button>
+        </div>
+      </div>
+      <p class="mb-1">{{ c.descricao }}</p>
+    </div>
+  </div>
+</div>
