@@ -125,11 +125,21 @@ mvn clean package
 java -jar target/task-to-do-app-0.0.1-SNAPSHOT.jar
 ```
 
+O front-end entra em ação com:
+
+para instalar as bibliotecas e dependências para o angular:
+``` sh
+npm install
+```
+para rodar o front:
+``` sh
+ng serve
+```
 ------------------------------------------------------------------------
 
 ## 🗄️ Banco de Dados
 
-O projeto usa **H2 Database** por padrão.
+O projeto usa **POSTGRESQL Database** por padrão.
 
 Configurações em:
 
@@ -145,7 +155,7 @@ Um arquivo `init.sql` acompanha o projeto para inicialização de dados.
 -   Spring Boot\
 -   Spring Web\
 -   Spring Data JPA\
--   H2 Database\
+-   POSTGRESQL Database\
 -   Maven
 
 ------------------------------------------------------------------------
