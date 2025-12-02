@@ -1,0 +1,32 @@
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
+.list-group-item strong {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.list-group-item small {
+  color: #6c757d;
+}
+
+.btn-sm {
+  margin: 0 5px;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.8rem;
+  transition: all 0.3s;
+}

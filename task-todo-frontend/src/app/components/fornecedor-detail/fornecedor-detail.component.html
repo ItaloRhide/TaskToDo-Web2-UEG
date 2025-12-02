@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <div *ngIf="loading" class="text-center">Carregando...</div>
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+  <div *ngIf="fornecedor" class="card">
+    <div class="card-header">
+      <h2>Detalhes do Fornecedor</h2>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ fornecedor.nome }}</h5>
+      <p class="card-text"><strong>ID:</strong> {{ fornecedor.id }}</p>
+      <p class="card-text"><strong>CNPJ:</strong> {{ fornecedor.cnpj }}</p>
+
+      <hr>
+
+      <h5>Tarefas Associadas</h5>
+      <div *ngIf="fornecedor.tasks && fornecedor.tasks.length > 0; else noTasks">
+        <ul class="list-group">
+          <li *ngFor="let task of fornecedor.tasks" class="list-group-item">
+            <a [routerLink]="['/editar-tarefa', task.id]">#{{ task.id }} - {{ task.titulo }}</a>
+          </li>
+        </ul>
+      </div>
+      <ng-template #noTasks>
+        <p class="text-muted">Nenhuma tarefa associada a este fornecedor.</p>
+      </ng-template>
+    </div>
+    <div class="card-footer">
+      <a routerLink="/fornecedores" class="btn btn-secondary">Voltar para a Lista</a>
+    </div>
+  </div>
+</div>

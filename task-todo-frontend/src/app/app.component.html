@@ -1,0 +1,32 @@
+<nav class="navbar navbar-light bg-white shadow-sm px-3">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center">
+      <img src="assets\midia\levi_logo.png" alt="Logo" class="navbar-logo me-2" />
+      <span class="navbar-brand" routerLink="/tasks" style="cursor: pointer;">Task To Do</span>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <button routerLink="/" class="btn btn-outline-secondary btn-sm me-2">
+        Página Inicial
+      </button>
+      <button routerLink="/category" class="btn btn-outline-secondary btn-sm me-2">
+        Gerenciar Categorias
+      </button>
+      <button routerLink="/fornecedores" class="btn btn-outline-secondary btn-sm me-2">
+        Gerenciar Fornecedores
+      </button>
+      <!-- 🌙 Botão de Modo Escuro -->
+      <button class="btn btn-outline-secondary btn-sm" (click)="toggleDarkMode()">
+        {{ isDarkMode ? '☀️ Claro' : '🌙 Escuro' }}
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="container mt-4">
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <p>&copy; 2025 Task To Do. Todos os direitos reservados.</p>
+</footer>

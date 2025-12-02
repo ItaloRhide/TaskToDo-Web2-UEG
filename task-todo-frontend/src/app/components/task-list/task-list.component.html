@@ -1,0 +1,93 @@
+<div class="container mt-4">
+  <h2>{{ pageTitle }}</h2>
+  <div class="mb-3 d-flex gap-2 align-items-center">
+    <input
+      [(ngModel)]="searchTitle"
+      (input)="applyFilters()"
+      placeholder="Buscar por título..."
+      class="form-control"
+    />
+    <select
+      [(ngModel)]="filterType"
+      (change)="applyFilters()"
+      class="form-select"
+      style="width: 200px"
+    >
+      <option value="all">Todas</option>
+      <option value="pending">Pendentes</option>
+      <option value="completed">Concluídas</option>
+      <option value="today">Vencimento hoje</option>
+      <option value="overdue">Vencidas</option>
+    </select>
+  </div>
+
+  <!-- Redireciona para a página de criação -->
+  <button class="btn btn-primary mb-3" [routerLink]="['/nova-tarefa']">
+    Nova Tarefa
+  </button>
+
+  <div *ngIf="loading">Carregando...</div>
+
+  <!-- Alerta de erro auto-hide -->
+  <div
+    *ngIf="error"
+    class="alert alert-danger alert-dismissible fade show"
+    role="alert"
+    style="position: relative"
+  >
+    <div class="d-flex justify-content-between align-items-start">
+      <div>{{ error }}</div>
+    </div>
+  </div>
+
+  <!-- Container para a lista ou mensagem de 'nenhuma tarefa' -->
+  <div *ngIf="!loading">
+    <ul *ngIf="filteredTasks.length > 0; else noTasks" class="list-group">
+      <li
+        *ngFor="let task of filteredTasks"
+        class="list-group-item d-flex justify-content-between align-items-start"
+      >
+        <div>
+          <input
+            type="checkbox"
+            [checked]="task.concluida"
+            (change)="toggleComplete(task)"
+          />
+          <strong [class.text-decoration-line-through]="task.concluida">
+            {{ task.titulo }}
+          </strong>
+          <div>
+            <small>
+              Vence: {{ task.dataVencimento }} · Prioridade:
+              {{ getPrioridadeLabel(task.prioridade) }}
+              <span *ngIf="task.categoria"> · Categoria: {{ task.categoria.nome }}</span>
+            </small>
+          </div>
+        </div>
+
+        <div>
+          <!-- Agora leva para a página de edição -->
+          <button
+            class="btn btn-outline-primary me-1"
+            [routerLink]="['/editar-tarefa', task.id]"
+          >
+            Editar
+          </button>
+          <button
+            class="btn btn-outline-danger"
+            (click)="deleteTask(task.id)"
+          >
+            Excluir
+          </button>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Template a ser exibido se não houver tarefas -->
+    <ng-template #noTasks>
+      <div *ngIf="!error" class="alert alert-info">
+        Nenhuma tarefa encontrada.
+      </div>
+    </ng-template>
+  </div>
+</div>

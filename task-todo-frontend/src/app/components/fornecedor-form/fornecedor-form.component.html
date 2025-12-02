@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <h2>{{ pageTitle }}</h2>
+
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+  <form [formGroup]="fornecedorForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" id="nome" formControlName="nome" class="form-control"
+             [ngClass]="{ 'is-invalid': fornecedorForm.get('nome')?.invalid && fornecedorForm.get('nome')?.touched }">
+      <div *ngIf="fornecedorForm.get('nome')?.invalid && fornecedorForm.get('nome')?.touched" class="invalid-feedback">
+        <div *ngIf="fornecedorForm.get('nome')?.errors?.['required']">Nome é obrigatório.</div>
+        <div *ngIf="fornecedorForm.get('nome')?.errors?.['minlength']">Nome deve ter no mínimo 3 caracteres.</div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="cnpj" class="form-label">CNPJ</label>
+      <input type="text" id="cnpj" formControlName="cnpj" class="form-control"
+             (input)="onCnpjInput($event)"
+             [ngClass]="{ 'is-invalid': fornecedorForm.get('cnpj')?.invalid && fornecedorForm.get('cnpj')?.touched }">
+      <div *ngIf="fornecedorForm.get('cnpj')?.invalid && fornecedorForm.get('cnpj')?.touched" class="invalid-feedback">
+        <div *ngIf="fornecedorForm.get('cnpj')?.errors?.['required']">CNPJ é obrigatório.</div>
+        <div *ngIf="fornecedorForm.get('cnpj')?.errors?.['minlength'] || fornecedorForm.get('cnpj')?.errors?.['maxlength']">CNPJ deve ter exatamente 14 dígitos.</div>
+        <div *ngIf="fornecedorForm.get('cnpj')?.errors?.['pattern']">CNPJ deve conter apenas números.</div>
+      </div>
+    </div>
+
+    <div class="d-flex gap-2">
+      <button type="submit" class="btn btn-primary" [disabled]="fornecedorForm.invalid">
+        {{ isEditMode ? 'Atualizar' : 'Salvar' }}
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="goBack()">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>
