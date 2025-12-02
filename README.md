@@ -1,7 +1,7 @@
 # ✅ Task To-Do App
 
 API REST para gerenciamento de tarefas e categorias usando **Spring
-Boot + JPA + Angular**.
+Boot + JPA + Angular + PostgreSQL**.
 
 ------------------------------------------------------------------------
 
@@ -10,10 +10,12 @@ Boot + JPA + Angular**.
 O **Task To-Do App** é uma aplicação backend desenvolvida em **Java
 Spring Boot** que oferece uma API REST completa para gerenciar:
 
--   ✔️ Categorias\
--   ✔️ Tarefas\
--   ✔️ Relacionamento entre Tarefas e Categorias\
--   ✔️ Regras de negócio isoladas em Services\
+-   ✔️ Categorias
+-   ✔️ Tarefas
+-   ✔️ Fornecedores
+-   ✔️ Relacionamento entre Tarefas e Categorias
+-   ✔️ Relacionamento entre Tarefas e fornecedores
+-   ✔️ Regras de negócio isoladas em Services
 -   ✔️ Persistência usando Spring Data JPA
 
 Ela é ideal para estudos de CRUD, consumo por frontends (React, Angular,
@@ -41,7 +43,7 @@ Mobile) e práticas de arquitetura em camadas.
 
 ------------------------------------------------------------------------
 
-## 📂 Estrutura do Projeto
+## 📂 Estrutura do Back-end em releases
 
     src/
     ├── main/
@@ -49,7 +51,7 @@ Mobile) e práticas de arquitetura em camadas.
     │   │   ├── controller/   → Endpoints REST
     │   │   ├── service/      → Regras de negócio
     │   │   ├── repository/   → Acesso ao banco via JPA
-    │   │   ├── model/        → Entidades (Task, Category)
+    │   │   ├── model/        → Entidades (Task, Category, Fornecedor)
     │   │   └── TaskTodoApplication.java
     │   └── resources/
     │       ├── application.properties
@@ -81,27 +83,13 @@ Mobile) e práticas de arquitetura em camadas.
 
 ------------------------------------------------------------------------
 
-## 🔗 Endpoints da API
+### **Fornecedor**
 
-### 📌 **Categorias**
-
-  Método   Rota                 Descrição
-  -------- -------------------- -------------
-  GET      `/categories`        Lista todas
-  POST     `/categories`        Cria nova
-  PUT      `/categories/{id}`   Atualiza
-  DELETE   `/categories/{id}`   Remove
-
-------------------------------------------------------------------------
-
-### 📌 **Tarefas**
-
-  Método   Rota            Descrição
-  -------- --------------- -------------
-  GET      `/tasks`        Lista todas
-  POST     `/tasks`        Cria nova
-  PUT      `/tasks/{id}`   Atualiza
-  DELETE   `/tasks/{id}`   Remove
+  Campo         Tipo       Descrição
+  ------------- ---------- --------------------------
+  id            Long       Identificador
+  NOME          String     nome
+  CNPJ          String     CNPJ
 
 ------------------------------------------------------------------------
 
@@ -145,21 +133,20 @@ Configurações em:
 
     src/main/resources/application.properties
 
-Um arquivo `init.sql` acompanha o projeto para inicialização de dados.
-
 ------------------------------------------------------------------------
 
 ## 🛠️ Tecnologias
 
--   Java 17\
--   Spring Boot\
--   Spring Web\
--   Spring Data JPA\
--   POSTGRESQL Database\
+-   Java 17
+-   Spring Boot
+-   Spring Web
+-   Spring Data JPA
+-   POSTGRESQL Database
+-   ANGULAR
 -   Maven
 
 ------------------------------------------------------------------------
 
 ## 👨‍💻 Autor
 
-Projeto desenvolvido para fins acadêmicos e de estudo.\
+Projeto desenvolvido para fins acadêmicos e de estudo.
