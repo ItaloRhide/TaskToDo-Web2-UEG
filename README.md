@@ -1,7 +1,7 @@
 # ✅ Task To-Do App
 
 API REST para gerenciamento de tarefas e categorias usando **Spring
-Boot + JPA**.
+Boot + JPA + Angular**.
 
 ------------------------------------------------------------------------
 
