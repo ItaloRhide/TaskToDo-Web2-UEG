@@ -73,32 +73,32 @@ Mobile) e práticas de arquitetura em camadas.
 
 ### **Category**
 
-  Campo   Tipo     Descrição
+  Campo   Tipo     Descrição\
   ------- -------- -------------------
-  id      Long     Identificador
-  name    String   Nome da categoria
+  id      Long     Identificador\
+  name    String   Nome da categoria\
 
 ------------------------------------------------------------------------
 
 ### **Task**
 
-  Campo         Tipo       Descrição
+  Campo         Tipo       Descrição\
   ------------- ---------- --------------------------
-  id            Long       Identificador
-  title         String     Título
-  description   String     Descrição
-  done          Boolean    Status
-  category      Category   Relacionamento ManyToOne
+  id            Long       Identificador\
+  title         String     Título\
+  description   String     Descrição\
+  done          Boolean    Status\
+  category      Category   Relacionamento ManyToOne\
 
 ------------------------------------------------------------------------
 
 ### **Fornecedor**
 
-  Campo         Tipo       Descrição
+  Campo         Tipo       Descrição\
   ------------- ---------- --------------------------
-  id            Long       Identificador
-  NOME          String     nome
-  CNPJ          String     CNPJ
+  id            Long       Identificador\
+  NOME          String     nome\
+  CNPJ          String     CNPJ\
 
 ------------------------------------------------------------------------
 
