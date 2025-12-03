@@ -10,13 +10,13 @@ Boot + JPA + Angular + PostgreSQL**.
 O **Task To-Do App** é uma aplicação backend desenvolvida em **Java
 Spring Boot** que oferece uma API REST completa para gerenciar:
 
--   ✔️ Categorias
--   ✔️ Tarefas
--   ✔️ Fornecedores
--   ✔️ Relacionamento entre Tarefas e Categorias
--   ✔️ Relacionamento entre Tarefas e fornecedores
--   ✔️ Regras de negócio isoladas em Services
--   ✔️ Persistência usando Spring Data JPA
+-   ✔️ Categorias\
+-   ✔️ Tarefas\
+-   ✔️ Fornecedores\
+-   ✔️ Relacionamento entre Tarefas e Categorias\
+-   ✔️ Relacionamento entre Tarefas e fornecedores\
+-   ✔️ Regras de negócio isoladas em Services\
+-   ✔️ Persistência usando Spring Data JPA\
 
 Ela é ideal para estudos de CRUD, consumo por frontends (React, Angular,
 Mobile) e práticas de arquitetura em camadas.
@@ -27,19 +27,28 @@ Mobile) e práticas de arquitetura em camadas.
 
 ### 🔹 Categorias
 
--   Criar
--   Listar
--   Atualizar
--   Excluir
+-   Criar\
+-   Listar\
+-   Atualizar\
+-   Excluir\
 
 ### 🔹 Tarefas
 
--   Criar
--   Listar
--   Atualizar
--   Excluir
--   Marcar como concluída
--   Vincular a uma categoria existente
+-   Criar\
+-   Listar\
+-   Atualizar\
+-   Excluir\
+-   Marcar como concluída\
+-   Vincular a uma categoria existente\
+-   Vincular a um fornecedor existente\
+
+### 🔹 Fornecedor
+
+-   Criar\
+-   Listar\
+-   Atualizar\
+-   Excluir\
+-   Verificar atividades correlatas\
 
 ------------------------------------------------------------------------
 
