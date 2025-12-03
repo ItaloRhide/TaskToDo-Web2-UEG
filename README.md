@@ -136,7 +136,7 @@ ng serve
 
 ## 🗄️ Banco de Dados
 
-O projeto usa **POSTGRESQL Database** por padrão.
+O projeto usa **POSTGRESQL Database** por padrão.\
 
 Configurações em:
 
@@ -146,13 +146,13 @@ Configurações em:
 
 ## 🛠️ Tecnologias
 
--   Java 17
--   Spring Boot
--   Spring Web
--   Spring Data JPA
--   POSTGRESQL Database
--   ANGULAR
--   Maven
+-   Java 17\
+-   Spring Boot\
+-   Spring Web\
+-   Spring Data JPA\
+-   POSTGRESQL Database\
+-   ANGULAR\
+-   Maven\
 
 ------------------------------------------------------------------------
 
